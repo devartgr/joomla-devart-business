@@ -11,7 +11,7 @@
         <downloads>
             <downloadurl type="full" format="zip">https://github.com/devartgr/joomla-devart-business/releases/download/v1.0.2/pkg_devartbusiness_v1.0.2.zip</downloadurl>
         </downloads>
-        <sha256>b94a4b288a897dbcfe85ac33446d9ccacef801a6f1ff994cb872261243d6e617</sha256>
+        <sha256>a90bebfde905f57bc7c4b6fa79fbca7db1c7c27e8c6385f4431116afa064ff1b</sha256>
         <changelogurl>https://raw.githubusercontent.com/devartgr/joomla-devart-business/main/changelog.xml</changelogurl>
         <targetplatform name="joomla" version="6.*" />
         <php_minimum>8.2</php_minimum>
