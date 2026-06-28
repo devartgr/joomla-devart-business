@@ -1,1 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<changelogs>
+    <changelog>
+        <element>pkg_devartbusiness</element>
+        <type>package</type>
+        <version>1.0.2</version>
 
+        <addition>
+            <item>Added full Joomla 6 native DevArt Business package</item>
+            <item>Added administrator component for managing business listings</item>
+            <item>Added frontend business directory module</item>
+            <item>Added business categories with unlimited hierarchy support</item>
+            <item>Added tags support</item>
+            <item>Added business galleries integration with DevArt Gallery</item>
+            <item>Added Google Maps integration</item>
+            <item>Added business opening hours</item>
+            <item>Added business contact information</item>
+            <item>Added website and social links</item>
+            <item>Added business videos support</item>
+            <item>Added featured businesses</item>
+            <item>Added CSV import and export tools</item>
+            <item>Added complete JSON backup and restore</item>
+            <item>Added maintenance and cache management tools</item>
+            <item>Added GitHub-based Joomla update server support</item>
+            <item>Added automatic image optimization during upload</item>
+            <item>Added automatic image resize with configurable maximum dimensions</item>
+            <item>Added optional WebP image conversion</item>
+            <item>Added automatic safe filename generation for uploaded images</item>
+        </addition>
+
+        <change>
+            <item>Business architecture designed specifically for Joomla 6 and PHP 8.2+</item>
+            <item>Optimized for high-traffic business directories and editorial websites</item>
+            <item>Business images uploaded through the component are automatically optimized while existing Media Manager images remain untouched</item>
+            <item>Business Settings and administrator tools redesigned for improved usability and consistency with the DevArt component suite</item>
+        </change>
+
+        <security>
+            <item>Added ACL enforcement for administrator operations</item>
+            <item>Added CSRF protection for administrator actions</item>
+            <item>Added secure JSON import and export validation</item>
+            <item>Added parameterized database queries for import operations</item>
+            <item>Added safe file upload validation and image processing</item>
+            <item>Added safe output escaping throughout frontend rendering</item>
+        </security>
+
+        <note>
+            <item>First public production release of DevArt Business</item>
+            <item>Built exclusively for Joomla 6 with PHP 8.2+</item>
+            <item>No database migration required for new installations</item>
+            <item>CSV import tools support migration from existing business directories</item>
+            <item>JSON backup and restore provides complete site portability</item>
+            <item>Always test upgrades on a staging environment before production deployment</item>
+        </note>
+
+    </changelog>
+</changelogs>
