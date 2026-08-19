@@ -1,21 +1,26 @@
 # DevArt Business for Joomla
 
-Modern business directory component for Joomla 6, designed for companies, municipalities, organizations, associations, tourism portals, local directories and high-traffic websites.
+Modern business directory package for Joomla 6, designed for companies,
+municipalities, organizations, associations, tourism portals, local directories,
+and high-traffic websites.
 
 ![Joomla](https://img.shields.io/badge/Joomla-6.x-blue)
-![PHP](https://img.shields.io/badge/PHP-8.2%2B-green)
-![Release](https://img.shields.io/badge/Version-1.0.2-orange)
-![License](https://img.shields.io/badge/License-GPLv3-red)
+![PHP](https://img.shields.io/badge/PHP-8.3%2B-green)
+![Release](https://img.shields.io/badge/Version-1.1.4-orange)
+![License](https://img.shields.io/badge/License-GPL--2.0%2B-red)
 
 ---
 
 ## Overview
 
-DevArt Business is a modern Joomla 6 business directory component designed from the ground up for performance, security, stability and scalability.
+DevArt Business is a modern Joomla 6 business directory package designed for
+performance, security, stability, and scalability.
 
-It allows administrators to create and manage professional business directories with categories, galleries, maps, videos, opening hours and structured business information while remaining lightweight and easy to maintain.
+It allows administrators to create and manage professional business directories
+with categories, tags, locations, galleries, maps, videos, opening hours, and
+structured business information while remaining lightweight and easy to maintain.
 
-The package includes a Joomla component and frontend module.
+The package includes a Joomla component and a frontend module.
 
 ---
 
@@ -26,32 +31,27 @@ The package includes a Joomla component and frontend module.
 Create and manage:
 
 - Business listings
-- Categories
+- Categories with unlimited hierarchy
 - Tags
+- Locations with primary location support
 - Featured businesses
-- Company logos
-- Main business images
+- Company logos and main business images
 - Contact information
-- Website links
-- Email addresses
-- Telephone numbers
-- Social media links
-- Business descriptions
-
----
+- Website, email, telephone, and social links
+- Business descriptions and publication windows
+- Access levels and language assignments
 
 ### Maps
 
-Integrated map support.
+Integrated map support for listings, business detail pages, and the site module.
 
 Features:
 
-- Google Maps
-- Latitude / Longitude
+- Leaflet-based frontend maps with CDN Subresource Integrity
+- Latitude and longitude with shared geo validation
+- Google Maps geocoding and preview in the administrator
 - Interactive location display
-- Responsive maps
-
----
+- Responsive map layouts
 
 ### Opening Hours
 
@@ -60,11 +60,9 @@ Business opening hours management.
 Features:
 
 - Per-day schedules
-- Open / Closed status
+- Open / closed status
 - 24-hour mode
 - Flexible opening and closing times
-
----
 
 ### Gallery Integration
 
@@ -72,11 +70,10 @@ Native integration with DevArt Gallery.
 
 Features:
 
-- Select existing galleries
-- Display image galleries inside business pages
-- Reuse galleries across multiple businesses
-
----
+- Select indexed galleries from the administrator
+- Display galleries on business pages
+- Consumer-only integration through DevArt Gallery APIs
+- Manual gallery media support when DevArt Gallery is not used
 
 ### Videos
 
@@ -86,28 +83,34 @@ Features:
 
 - YouTube
 - Vimeo
-- Self-hosted video links
-
----
+- Validated embed rendering on the frontend
 
 ### Frontend
 
 Included frontend views:
 
-- Business Listing
-- Business Detail
-- Category Listing
-- Search Results
+- Business listing with search and filters
+- Business detail
+- Category listing
+- Tag listing
 
 Features:
 
 - Responsive layouts
-- SEO-friendly URLs
-- Category filtering
+- SEO-friendly URLs and menu routing
+- Category and tag filtering
 - Featured businesses
-- Business search
+- Full-text business search
+- LocalBusiness JSON-LD structured data
+- Open Graph and social metadata
 
----
+### Site Module
+
+Lightweight frontend module with multiple display sources:
+
+- Latest, featured, category, categories, tag, tags
+- Single business, selected businesses, random
+- Category listing and map views
 
 ### Image Upload Optimization
 
@@ -116,17 +119,13 @@ Built-in image optimization during upload.
 Features:
 
 - Automatic resize
-- Configurable maximum width
-- Configurable maximum height
-- Optional WEBP conversion
-- JPEG quality control
-- WEBP quality control
+- Configurable maximum width and height
+- Optional WebP conversion
+- JPEG and WebP quality control
 - Automatic safe filename generation
 - Aspect ratio preservation
 - No upscaling
 - Existing Media Manager images remain untouched
-
----
 
 ### Import / Export
 
@@ -136,13 +135,10 @@ Features:
 
 - CSV category import
 - CSV business import
-- CSV export
-- Complete JSON backup
-- Complete JSON restore
-- Safe validation
-- Portable configuration
-
----
+- CSV export with spreadsheet formula hardening
+- Complete JSON backup with streaming export
+- Complete JSON restore with import limits
+- Safe validation and portable configuration
 
 ### Maintenance Tools
 
@@ -150,22 +146,25 @@ Built-in administrator tools.
 
 Features:
 
-- Cache management
-- Cache cleanup
-- Business maintenance
-- Category rebuild
-- Default category installer
-- Default category removal
-
----
+- Category tree rebuild
+- Default category installer and removal
+- Import and export tools
+- JSON backup and restore
 
 ### Joomla Native Updates
 
-Supports Joomla native updates via GitHub.
+Supports Joomla native package updates via GitHub.
 
-Update Server:
+Update server:
 
 https://raw.githubusercontent.com/devartgr/joomla-devart-business/main/update.xml
+
+Changelog:
+
+https://raw.githubusercontent.com/devartgr/joomla-devart-business/main/changelog.xml
+
+Install and update with the **package ZIP** (`pkg_devartbusiness`). Component and
+module always update together through the package.
 
 ---
 
@@ -173,15 +172,29 @@ https://raw.githubusercontent.com/devartgr/joomla-devart-business/main/update.xm
 
 This package installs:
 
-- com_devartbusiness
-- mod_devartbusiness
+- `com_devartbusiness`
+- `mod_devartbusiness`
 
 ---
 
 ## Requirements
 
-- Joomla 6.x
-- PHP 8.2+
+- Joomla 6.0+
+- PHP 8.3.0+
+
+---
+
+## Languages
+
+Packaged administrator and frontend languages:
+
+- en-GB
+- el-GR
+- fr-FR
+- de-DE
+- es-ES
+- it-IT
+- pt-PT
 
 ---
 
@@ -193,7 +206,7 @@ Features:
 
 - Joomla native MVC architecture
 - Optimized database queries
-- Cache-friendly rendering
+- Cache-friendly component and module output
 - Cloudflare friendly
 - CDN friendly
 - Large directory ready
@@ -217,7 +230,8 @@ Built with search engines in mind.
 Features:
 
 - SEO-friendly URLs
-- Business structured data (Schema.org)
+- LocalBusiness structured data (Schema.org)
+- Canonical URLs
 - Open Graph metadata
 - Social sharing metadata
 - Clean HTML output
@@ -228,10 +242,11 @@ Features:
 
 - Joomla ACL support
 - CSRF protection
+- Public visibility enforcement (access, language, publish windows)
 - Prepared SQL statements
-- Secure JSON import/export
-- Safe file upload validation
-- Safe output escaping
+- Secure JSON import and export
+- Safe file upload validation and image limits
+- Safe output escaping and sanitised settings HTML
 - Joomla native architecture
 
 ---
@@ -241,57 +256,57 @@ Features:
 Supported:
 
 - Joomla 6.x
-- PHP 8.2+
-- Joomla native updates
+- PHP 8.3, 8.4, and 8.5
+- Joomla native package updates
 - Modern Joomla MVC architecture
 
-Not Supported:
+Not supported:
 
-- Joomla 3
-- Joomla 4
-- Joomla 5
-- Legacy PHP versions
+- Joomla 3, 4, or 5
+- PHP 7.x or PHP 8.0–8.2
+
+Optional integration:
+
+- DevArt Gallery (`com_devartgallery`) when gallery features are used
 
 ---
 
 ## Current Version
 
-1.0.2
+1.1.4
 
 ---
 
-## What's New in 1.0.2
+## What's New in 1.1.4
 
-### Added
-
-- Initial public release
-- Business directory management
-- Categories and tags
-- Business galleries
-- Google Maps support
-- Opening hours
-- Business videos
-- CSV import and export
-- Complete JSON backup and restore
-- Business maintenance tools
-- Automatic image optimization
-- Optional WEBP conversion
-- GitHub update server support
+Maintenance and quality update for production deployments.
 
 ### Improved
 
-- Administrator workflow
-- Business image handling
-- Large directory performance
-- Import and migration workflow
-- Joomla 6 native architecture
+- Package-only Joomla update ownership
+- DevArt Gallery consumer integration through `DevartGalleryBridge`
+- Frontend map and video embed rendering
+- Business SEF routing and 404 handling
+- Public visibility enforcement across component, router, and module
+- Geo coordinate validation across saves, import, maps, and JSON-LD
+- Category tree integrity and safe permanent delete workflows
+- Atomic administrator business save with rollback on failure
+- Frontend FULLTEXT search and listing map dataset policy
+- Administrator and frontend languages for fr-FR, de-DE, es-ES, it-IT, and pt-PT
 
-### Compatibility
+### Security
 
-- Joomla 6.x
-- PHP 8.2+
-- Cloudflare friendly
-- Production ready
+- URL and JSON-LD hardening
+- CSV export formula injection hardening
+- JSON backup and restore limits
+- Image upload byte, dimension, and pixel ceilings
+- Installer schema error handling for required migrations
+
+### Notes
+
+- Install or update with the package ZIP once; later updates use Joomla native package updates
+- Requires Joomla 6.0+ and PHP 8.3.0+
+- First public release: 1.0.2 (June 2026)
 
 ---
 
@@ -302,7 +317,7 @@ DevArt
 
 https://devart.gr
 
-GitHub Repository:
+GitHub repository:
 
 https://github.com/devartgr/joomla-devart-business
 
@@ -310,7 +325,7 @@ https://github.com/devartgr/joomla-devart-business
 
 ## License
 
-GNU General Public License v3.0 (GPLv3)
+GNU General Public License version 2 or later (GPL-2.0-or-later)
 
 ---
 
@@ -318,6 +333,28 @@ GNU General Public License v3.0 (GPLv3)
 
 This software is provided "as is", without warranty of any kind.
 
-DevArt shall not be held liable for any damages, data loss, downtime, security incidents, business interruption, loss of profits, or other consequences arising from the use or inability to use this software.
+DevArt shall not be held liable for any damages, data loss, downtime, security
+incidents, business interruption, loss of profits, or other consequences arising
+from the use or inability to use this software.
 
-Always test updates in a staging environment before deploying to production systems.
+Always test updates in a staging environment before deploying to production
+systems.
+
+---
+
+## Development
+
+This repository is the source of truth for DevArt Business.
+
+- Editable source: `source/`
+- Generated packages: `builds/`
+- Operational status: `PROJECT_STATUS.md`
+
+Validate and build:
+
+```shell
+php scripts/validate.php
+php scripts/build.php
+```
+
+Manual QA template: `qa/checklist.md`
