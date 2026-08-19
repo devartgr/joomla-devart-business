@@ -3,6 +3,59 @@
     <changelog>
         <element>pkg_devartbusiness</element>
         <type>package</type>
+        <version>1.1.4</version>
+
+        <change>
+            <item>Joomla native updates now target the package only (pkg_devartbusiness, site client)</item>
+            <item>PHP minimum for updates aligned to 8.3.0</item>
+            <item>DevArt Gallery integration is consumer-only through DevartGalleryBridge</item>
+            <item>Map and video embeds render through JavaScript instead of literal iframe markup in PHP templates</item>
+            <item>Module random ordering shuffles a bounded recent-business pool instead of SQL RAND()</item>
+            <item>Settings header and footer HTML uses shared HtmlSanitizer with Joomla InputFilter allowlists</item>
+            <item>Frontend listing search uses FULLTEXT boolean-mode matching with optimised category subtree expansion</item>
+            <item>Component listing map uses the full filtered dataset; module map source is uncapped</item>
+        </change>
+
+        <fix>
+            <item>Business SEF routes resolve menu-prefixed segments and return proper 404 responses</item>
+            <item>Public visibility enforces access, language, and publish window rules across component, router, and module</item>
+            <item>Business detail hero, logo, and gallery images render correctly on root and subfolder installs</item>
+            <item>Geo coordinate normalisation and validation shared across saves, import, maps, and LocalBusiness JSON-LD</item>
+            <item>Category tree integrity with descendant-safe parent validation and child-safe delete</item>
+            <item>Atomic administrator business save with transaction rollback and uploaded-image cleanup on failure</item>
+            <item>Administrator map preview and geocode JavaScript restored after language hardening regression</item>
+        </fix>
+
+        <security>
+            <item>ACL enforcement and CSRF protection for administrator operations</item>
+            <item>External URL and validated video embed hardening on save and render</item>
+            <item>Safe JSON-LD output and CSV export formula injection hardening</item>
+            <item>JSON backup and restore hardening with streaming export, import limits, and manifest version metadata</item>
+            <item>Business image upload byte, dimension, and pixel ceilings before GD decode</item>
+            <item>Safe permanent delete for trashed businesses, categories, and tags with relation cleanup</item>
+            <item>Installer schema migrations fail fast on required errors and remain idempotent on duplicate columns</item>
+        </security>
+
+        <addition>
+            <item>Frontend and administrator languages for fr-FR, de-DE, es-ES, it-IT, and pt-PT</item>
+            <item>Administrator gallery picker lists indexed active galleries from DevArt Gallery</item>
+            <item>Featured filter and bulk feature or unfeature actions in administrator businesses list</item>
+            <item>Outer package LICENSE.txt (GPL-2.0-or-later notice)</item>
+            <item>Leaflet CDN Subresource Integrity on frontend map assets</item>
+        </addition>
+
+        <note>
+            <item>Install or update with the package ZIP once; later updates use Joomla native package updates</item>
+            <item>Requires Joomla 6.0+ and PHP 8.3.0+</item>
+            <item>Component and module always update together through pkg_devartbusiness</item>
+            <item>DevArt Gallery is optional; when installed, Business delegates gallery resolution to com_devartgallery</item>
+            <item>Recommended update for all DevArt Business installations on Joomla 6</item>
+        </note>
+    </changelog>
+
+    <changelog>
+        <element>pkg_devartbusiness</element>
+        <type>package</type>
         <version>1.0.2</version>
 
         <addition>
@@ -29,7 +82,7 @@
         </addition>
 
         <change>
-            <item>Business architecture designed specifically for Joomla 6 and PHP 8.2+</item>
+            <item>Business architecture designed specifically for Joomla 6 and PHP 8.3+</item>
             <item>Optimized for high-traffic business directories and editorial websites</item>
             <item>Business images uploaded through the component are automatically optimized while existing Media Manager images remain untouched</item>
             <item>Business Settings and administrator tools redesigned for improved usability and consistency with the DevArt component suite</item>
@@ -46,12 +99,11 @@
 
         <note>
             <item>First public production release of DevArt Business</item>
-            <item>Built exclusively for Joomla 6 with PHP 8.2+</item>
+            <item>Built exclusively for Joomla 6 with PHP 8.3+</item>
             <item>No database migration required for new installations</item>
             <item>CSV import tools support migration from existing business directories</item>
             <item>JSON backup and restore provides complete site portability</item>
             <item>Always test upgrades on a staging environment before production deployment</item>
         </note>
-
     </changelog>
 </changelogs>
