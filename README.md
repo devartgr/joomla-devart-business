@@ -6,7 +6,7 @@ and high-traffic websites.
 
 ![Joomla](https://img.shields.io/badge/Joomla-6.x-blue)
 ![PHP](https://img.shields.io/badge/PHP-8.3%2B-green)
-![Release](https://img.shields.io/badge/Version-1.1.4-orange)
+![Release](https://img.shields.io/badge/Version-1.1.5-orange)
 ![License](https://img.shields.io/badge/License-GPL--2.0%2B-red)
 
 ---
@@ -186,7 +186,7 @@ This package installs:
 
 ## Languages
 
-Packaged administrator and frontend languages:
+Packaged administrator and frontend languages (15 locales):
 
 - en-GB
 - el-GR
@@ -195,6 +195,14 @@ Packaged administrator and frontend languages:
 - es-ES
 - it-IT
 - pt-PT
+- cs-CZ
+- nl-NL
+- pl-PL
+- ru-RU
+- uk-UA
+- ja-JP
+- tr-TR
+- zh-CN
 
 ---
 
@@ -273,34 +281,27 @@ Optional integration:
 
 ## Current Version
 
-1.1.4
+1.1.5
 
 ---
 
-## What's New in 1.1.4
+## What's New in 1.1.5
 
-Maintenance and quality update for production deployments.
+Administrator UX polish and expanded language coverage for production
+deployments.
+
+### Added
+
+- DevArt hub-style administrator dashboard (New Business, Business list,
+  Categories, Tags, Business Settings, Options)
+- Business Settings option groups with bordered fieldset / legend sections
+- Languages: cs-CZ, nl-NL, pl-PL, ru-RU, uk-UA, ja-JP, tr-TR, zh-CN
+  (15 locales total)
 
 ### Improved
 
-- Package-only Joomla update ownership
-- DevArt Gallery consumer integration through `DevartGalleryBridge`
-- Frontend map and video embed rendering
-- Business SEF routing and 404 handling
-- Public visibility enforcement across component, router, and module
-- Geo coordinate validation across saves, import, maps, and JSON-LD
-- Category tree integrity and safe permanent delete workflows
-- Atomic administrator business save with rollback on failure
-- Frontend FULLTEXT search and listing map dataset policy
-- Administrator and frontend languages for fr-FR, de-DE, es-ES, it-IT, and pt-PT
-
-### Security
-
-- URL and JSON-LD hardening
-- CSV export formula injection hardening
-- JSON backup and restore limits
-- Image upload byte, dimension, and pixel ceilings
-- Installer schema error handling for required migrations
+- Language packs keep en-GB key parity and preserve string formatting
+  placeholders (`%s`, `%d`, `%1$s`, and related tokens)
 
 ### Notes
 
