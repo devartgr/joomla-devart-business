@@ -3,6 +3,30 @@
     <changelog>
         <element>pkg_devartbusiness</element>
         <type>package</type>
+        <version>1.1.5</version>
+
+        <change>
+            <item>Administrator dashboard redesigned to the DevArt hub card layout used by Video and Slider</item>
+            <item>Dashboard action cards use Business-specific icons and color accents</item>
+            <item>Language packs keep en-GB key parity and preserve string formatting placeholders</item>
+        </change>
+
+        <addition>
+            <item>Dashboard cards for New Business, Business list, Categories, Tags, Business Settings and Options</item>
+            <item>Dedicated Tools button retained below the hub grid with the SEO / Structured Data status block</item>
+            <item>Business Settings option groups use bordered fieldset and legend sections</item>
+            <item>Frontend and administrator languages for cs-CZ, nl-NL, pl-PL, ru-RU, uk-UA, ja-JP, tr-TR, and zh-CN</item>
+        </addition>
+
+        <note>
+            <item>Install or update with the package ZIP once; later updates use Joomla native package updates</item>
+            <item>Requires Joomla 6.0+ and PHP 8.3.0+</item>
+        </note>
+    </changelog>
+
+    <changelog>
+        <element>pkg_devartbusiness</element>
+        <type>package</type>
         <version>1.1.4</version>
 
         <change>
