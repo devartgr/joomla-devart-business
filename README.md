@@ -6,7 +6,7 @@ and high-traffic websites.
 
 ![Joomla](https://img.shields.io/badge/Joomla-6.x-blue)
 ![PHP](https://img.shields.io/badge/PHP-8.3%2B-green)
-![Release](https://img.shields.io/badge/Version-1.1.5-orange)
+![Release](https://img.shields.io/badge/Version-1.1.6-orange)
 ![License](https://img.shields.io/badge/License-GPL--2.0%2B-red)
 
 ---
@@ -281,27 +281,23 @@ Optional integration:
 
 ## Current Version
 
-1.1.5
+1.1.6
 
 ---
 
-## What's New in 1.1.5
+## What's New in 1.1.6
 
-Administrator UX polish and expanded language coverage for production
-deployments.
-
-### Added
-
-- DevArt hub-style administrator dashboard (New Business, Business list,
-  Categories, Tags, Business Settings, Options)
-- Business Settings option groups with bordered fieldset / legend sections
-- Languages: cs-CZ, nl-NL, pl-PL, ru-RU, uk-UA, ja-JP, tr-TR, zh-CN
-  (15 locales total)
+Joomla 7/8 API preparation and related asset-loading hotfixes.
 
 ### Improved
 
-- Language packs keep en-GB key parity and preserve string formatting
-  placeholders (`%s`, `%d`, `%1$s`, and related tokens)
+- DevArt Gallery CSS/JS and Google Maps load through WebAssetManager
+  (replaces deprecated Document::addStyleSheet()/addScript())
+- Application input access uses `getInput()` instead of deprecated
+  `$app->input` magic property
+- Gallery lightbox asset URLs use absolute `Uri::root()` paths
+- Google Maps callback inline script is ordered before the Maps API via
+  WebAssetManager options and asset dependency
 
 ### Notes
 
