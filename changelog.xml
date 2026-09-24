@@ -3,6 +3,24 @@
     <changelog>
         <element>pkg_devartbusiness</element>
         <type>package</type>
+        <version>1.1.6</version>
+
+        <change>
+            <item>DevArt Gallery and Google Maps assets load through WebAssetManager (Joomla 7 preparation)</item>
+            <item>DevArt Gallery asset URLs use absolute Uri::root() paths so lightbox CSS/JS load correctly</item>
+            <item>Google Maps callback inline script uses WebAssetManager options and depends on the Maps asset</item>
+            <item>Application input access uses getInput() instead of deprecated magic property (Joomla 8 preparation)</item>
+        </change>
+
+        <note>
+            <item>Install or update with the package ZIP once; later updates use Joomla native package updates</item>
+            <item>Requires Joomla 6.0+ and PHP 8.3.0+</item>
+        </note>
+    </changelog>
+
+    <changelog>
+        <element>pkg_devartbusiness</element>
+        <type>package</type>
         <version>1.1.5</version>
 
         <change>
