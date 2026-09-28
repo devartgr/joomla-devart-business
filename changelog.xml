@@ -3,6 +3,21 @@
     <changelog>
         <element>pkg_devartbusiness</element>
         <type>package</type>
+        <version>1.1.7</version>
+
+        <fix>
+            <item>Frontend menu lookup no longer filters by MenuItem client_id (avoids Undefined property warnings under SiteMenu)</item>
+        </fix>
+
+        <note>
+            <item>Install or update with the package ZIP once; later updates use Joomla native package updates</item>
+            <item>Requires Joomla 6.0+ and PHP 8.3.0+</item>
+        </note>
+    </changelog>
+
+    <changelog>
+        <element>pkg_devartbusiness</element>
+        <type>package</type>
         <version>1.1.6</version>
 
         <change>
