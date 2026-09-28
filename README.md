@@ -6,7 +6,7 @@ and high-traffic websites.
 
 ![Joomla](https://img.shields.io/badge/Joomla-6.x-blue)
 ![PHP](https://img.shields.io/badge/PHP-8.3%2B-green)
-![Release](https://img.shields.io/badge/Version-1.1.6-orange)
+![Release](https://img.shields.io/badge/Version-1.1.7-orange)
 ![License](https://img.shields.io/badge/License-GPL--2.0%2B-red)
 
 ---
@@ -281,23 +281,21 @@ Optional integration:
 
 ## Current Version
 
-1.1.6
+1.1.7
 
 ---
 
-## What's New in 1.1.6
+## What's New in 1.1.7
 
-Joomla 7/8 API preparation and related asset-loading hotfixes.
+Bugfix for PHP 8.x Undefined property warnings when resolving Business menu
+routes.
 
-### Improved
+### Fixed
 
-- DevArt Gallery CSS/JS and Google Maps load through WebAssetManager
-  (replaces deprecated Document::addStyleSheet()/addScript())
-- Application input access uses `getInput()` instead of deprecated
-  `$app->input` magic property
-- Gallery lightbox asset URLs use absolute `Uri::root()` paths
-- Google Maps callback inline script is ordered before the Maps API via
-  WebAssetManager options and asset dependency
+- Frontend menu lookup no longer filters by `MenuItem::client_id`. Joomla
+  `SiteMenu` already loads only site items and does not expose `client_id` on
+  `MenuItem`, so `getItems(..., 'client_id')` triggered `Undefined property`
+  warnings (same fix class as DevArt Documents / Events)
 
 ### Notes
 
