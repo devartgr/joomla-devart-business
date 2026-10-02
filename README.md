@@ -6,7 +6,7 @@ and high-traffic websites.
 
 ![Joomla](https://img.shields.io/badge/Joomla-6.x-blue)
 ![PHP](https://img.shields.io/badge/PHP-8.3%2B-green)
-![Release](https://img.shields.io/badge/Version-1.1.7-orange)
+![Release](https://img.shields.io/badge/Version-1.1.8-orange)
 ![License](https://img.shields.io/badge/License-GPL--2.0%2B-red)
 
 ---
@@ -47,11 +47,12 @@ Integrated map support for listings, business detail pages, and the site module.
 
 Features:
 
-- Leaflet-based frontend maps with CDN Subresource Integrity
+- Leaflet-based frontend maps served from local vendor assets (no unpkg CDN)
 - Latitude and longitude with shared geo validation
 - Google Maps geocoding and preview in the administrator
 - Interactive location display
 - Responsive map layouts
+- Listing and module maps capped at 500 markers for large directories
 
 ### Opening Hours
 
@@ -281,21 +282,37 @@ Optional integration:
 
 ## Current Version
 
-1.1.7
+1.1.8
 
 ---
 
-## What's New in 1.1.7
+## What's New in 1.1.8
 
-Bugfix for PHP 8.x Undefined property warnings when resolving Business menu
-routes.
+Security/correctness hardening, Joomla 7 administrator WebAssetManager prep,
+and listing performance improvements (same release line until public release).
 
 ### Fixed
 
-- Frontend menu lookup no longer filters by `MenuItem::client_id`. Joomla
-  `SiteMenu` already loads only site items and does not expose `client_id` on
-  `MenuItem`, so `getItems(..., 'client_id')` triggered `Undefined property`
-  warnings (same fix class as DevArt Documents / Events)
+- Administrator forms/lists load `form.validate`, `core`, and `multiselect`
+  through WebAssetManager instead of deprecated `HTMLHelper` behavior helpers
+- CSV/JSON import normalises external URLs and filters imported HTML body fields
+- Listing and module primary locations require published `state = 1`
+- Module category/tag filters avoid `DISTINCT` + `ORDER BY featured_ordering`
+  MySQL 8 `ONLY_FULL_GROUP_BY` failures
+- Categories view skips correlated business `COUNT` when the count display is off
+
+### Changed
+
+- Pagination uses a lightweight `COUNT` query without display `GROUP_CONCAT`
+  columns; location join only when filters/search need it
+- Category subtree expansion batches nested-set parents into one SQL query
+- `RouteHelper` memoises business/category route lookups per request
+- Filter option queries run only when that filter UI is enabled
+
+### Security
+
+- Import rejects unsafe URL schemes; listing website links use
+  `ExternalUrlHelper` before render
 
 ### Notes
 

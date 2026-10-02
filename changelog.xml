@@ -3,6 +3,55 @@
     <changelog>
         <element>pkg_devartbusiness</element>
         <type>package</type>
+        <version>1.1.8</version>
+
+        <fix>
+            <item>Administrator forms and lists load form.validate, core and multiselect through WebAssetManager instead of deprecated HTMLHelper behavior helpers</item>
+            <item>CSV and JSON business imports normalise external URLs and filter introtext/fulltext HTML before upsert</item>
+            <item>Listing and module primary location joins require published locations (state=1), matching business detail</item>
+            <item>Module category/tag filters use WHERE IN subqueries instead of DISTINCT so featured ordering stays MySQL 8 ONLY_FULL_GROUP_BY safe</item>
+            <item>Categories view skips the correlated business COUNT when show_category_business_count is off</item>
+            <item>Listing and module Leaflet maps initialise reliably after moving Leaflet to local vendor assets (WAM dependency order and AMD-safe dynamic load)</item>
+        </fix>
+
+        <change>
+            <item>Frontend listing pagination uses a lightweight COUNT query without display GROUP_CONCAT columns</item>
+            <item>Category subtree expansion batches nested-set parents into one SQL query</item>
+            <item>RouteHelper memoises business and category route/path lookups per request</item>
+            <item>Listing filter option queries run only when the matching filter UI is enabled</item>
+            <item>Detail back link uses a static listing URL for FPC safety; same-origin document.referrer is applied in site.js</item>
+            <item>Business Settings save syncs ComponentHelper params and cleans component, module, and _system callback caches</item>
+            <item>Listing search uses FULLTEXT and location prefix matches via UNION so OR-LIKE no longer disables the FULLTEXT index</item>
+            <item>Listing and module maps cap markers at 500; site.js limits Leaflet load retries and exposes DevartBusiness.init(root)</item>
+            <item>Module uses AbstractModuleDispatcher, BusinessModuleHelper, and services/provider.php instead of a procedural entry script</item>
+            <item>Tools diagnostics move to ToolsDiagnosticsHelper and the Tools view; failed checks log details without exposing raw exceptions</item>
+            <item>CSV business and category export streams in 500-row chunks; formula escaping covers leading whitespace and tab/CR/LF prefixes</item>
+            <item>ToolsController is a thin ACL/token façade; category, import and export logic live in ToolsCategoryHelper, ToolsImportHelper and ToolsExportHelper</item>
+            <item>CSV/JSON import writes in 500-row transaction chunks; import failures log details and show a generic administrator message</item>
+            <item>Content writes clear com_devartbusiness, mod_devartbusiness and _system callback caches via CacheHelper</item>
+            <item>Map popup links allow only http(s) URLs or same-site relative paths</item>
+            <item>Business detail introtext/fulltext render through HtmlSanitizer as defense-in-depth</item>
+            <item>Independent listing vs detail image ratios (poster/custom) in Business Settings Media; Image Upload Optimization fields live in Component Options</item>
+            <item>Overlay listing cards honour Card Background; categories view renders sanitized header/footer HTML from Business Settings</item>
+            <item>Gallery layout distinguishes grid (3 columns, 4:3) from compact (6 columns, 1:1) via explicit CSS variables</item>
+            <item>Leaflet 1.9.4 is served locally from media/com_devartbusiness/vendor/leaflet instead of the unpkg CDN</item>
+            <item>DevartGalleryBridge caches tableExists per request to avoid repeated SHOW TABLES probes</item>
+        </change>
+
+        <security>
+            <item>Import hardening rejects javascript/data URLs and sanitises imported HTML body fields</item>
+            <item>Frontend listing website links use ExternalUrlHelper normalisation before render</item>
+        </security>
+
+        <note>
+            <item>Install or update with the package ZIP once; later updates use Joomla native package updates</item>
+            <item>Requires Joomla 6.0+ and PHP 8.3.0+</item>
+        </note>
+    </changelog>
+
+    <changelog>
+        <element>pkg_devartbusiness</element>
+        <type>package</type>
         <version>1.1.7</version>
 
         <fix>
