@@ -3,6 +3,27 @@
     <changelog>
         <element>pkg_devartbusiness</element>
         <type>package</type>
+        <version>1.1.9</version>
+
+        <addition>
+            <item>Businesses CSV import/export supports an optional categories column (pipe-separated category id, alias, or unique title; first entry is primary)</item>
+        </addition>
+
+        <change>
+            <item>Businesses CSV import links businesses to existing categories only; unknown or ambiguous tokens are skipped</item>
+            <item>Omitting the categories column leaves existing category links unchanged; an empty value clears them</item>
+        </change>
+
+        <note>
+            <item>Install or update with the package ZIP once; later updates use Joomla native package updates</item>
+            <item>Requires Joomla 6.0+ and PHP 8.3.0+</item>
+            <item>Import categories first (or create them in the administrator) before using the categories column</item>
+        </note>
+    </changelog>
+
+    <changelog>
+        <element>pkg_devartbusiness</element>
+        <type>package</type>
         <version>1.1.8</version>
 
         <fix>

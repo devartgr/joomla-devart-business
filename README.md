@@ -6,7 +6,7 @@ and high-traffic websites.
 
 ![Joomla](https://img.shields.io/badge/Joomla-6.x-blue)
 ![PHP](https://img.shields.io/badge/PHP-8.3%2B-green)
-![Release](https://img.shields.io/badge/Version-1.1.8-orange)
+![Release](https://img.shields.io/badge/Version-1.1.9-orange)
 ![License](https://img.shields.io/badge/License-GPL--2.0%2B-red)
 
 ---
@@ -135,8 +135,9 @@ Portable business directory management.
 Features:
 
 - CSV category import
-- CSV business import
-- CSV export with spreadsheet formula hardening
+- CSV business import with optional `categories` column (pipe-separated id,
+  alias, or unique title; first = primary)
+- CSV export with spreadsheet formula hardening (includes `categories`)
 - Complete JSON backup with streaming export
 - Complete JSON restore with import limits
 - Safe validation and portable configuration
@@ -282,40 +283,28 @@ Optional integration:
 
 ## Current Version
 
-1.1.8
+1.1.9
 
 ---
 
-## What's New in 1.1.8
+## What's New in 1.1.9
 
-Security/correctness hardening, Joomla 7 administrator WebAssetManager prep,
-and listing performance improvements (same release line until public release).
+Businesses CSV can assign categories during bulk import/export.
 
-### Fixed
+### Added
 
-- Administrator forms/lists load `form.validate`, `core`, and `multiselect`
-  through WebAssetManager instead of deprecated `HTMLHelper` behavior helpers
-- CSV/JSON import normalises external URLs and filters imported HTML body fields
-- Listing and module primary locations require published `state = 1`
-- Module category/tag filters avoid `DISTINCT` + `ORDER BY featured_ordering`
-  MySQL 8 `ONLY_FULL_GROUP_BY` failures
-- Categories view skips correlated business `COUNT` when the count display is off
+- Optional `categories` column on businesses CSV import and export
+  (pipe-separated category id, alias, or unique title; first = primary)
 
 ### Changed
 
-- Pagination uses a lightweight `COUNT` query without display `GROUP_CONCAT`
-  columns; location join only when filters/search need it
-- Category subtree expansion batches nested-set parents into one SQL query
-- `RouteHelper` memoises business/category route lookups per request
-- Filter option queries run only when that filter UI is enabled
-
-### Security
-
-- Import rejects unsafe URL schemes; listing website links use
-  `ExternalUrlHelper` before render
+- Category linking matches existing categories only; unknown or ambiguous
+  tokens are skipped
+- Omit the column to leave category links unchanged; leave it empty to clear them
 
 ### Notes
 
+- Import or create categories before using the `categories` column
 - Install or update with the package ZIP once; later updates use Joomla native package updates
 - Requires Joomla 6.0+ and PHP 8.3.0+
 - First public release: 1.0.2 (June 2026)

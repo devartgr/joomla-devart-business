@@ -3,6 +3,14 @@
 All notable changes to this repository are documented here. Verified Joomla
 runtime QA is recorded in `PROJECT_STATUS.md` after VPS confirmation.
 
+## 1.1.9
+
+- Businesses CSV import and export support an optional `categories` column
+  (pipe-separated category id, alias, or unique title; first = primary).
+- Category linking matches existing categories only; unknown or ambiguous
+  tokens are skipped. Omit the column to leave links unchanged; leave it
+  empty to clear them.
+
 ## 1.1.8
 
 - Administrator forms and lists use WebAssetManager (`form.validate`, `core`,
