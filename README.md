@@ -6,7 +6,7 @@ and high-traffic websites.
 
 ![Joomla](https://img.shields.io/badge/Joomla-6.x-blue)
 ![PHP](https://img.shields.io/badge/PHP-8.3%2B-green)
-![Release](https://img.shields.io/badge/Version-1.1.9-orange)
+![Release](https://img.shields.io/badge/Version-1.2.0-orange)
 ![License](https://img.shields.io/badge/License-GPL--2.0%2B-red)
 
 ---
@@ -20,7 +20,8 @@ It allows administrators to create and manage professional business directories
 with categories, tags, locations, galleries, maps, videos, opening hours, and
 structured business information while remaining lightweight and easy to maintain.
 
-The package includes a Joomla component and a frontend module.
+The package includes a Joomla component, a frontend module, and a thin
+Comments host plugin.
 
 ---
 
@@ -107,11 +108,19 @@ Features:
 
 ### Site Module
 
+Site module: `mod_devartbusiness` (installed with the package).
+
 Lightweight frontend module with multiple display sources:
 
 - Latest, featured, category, categories, tag, tags
 - Single business, selected businesses, random
 - Category listing and map views
+
+### DevArt Ecosystem
+
+DevArt Business listings can be used as content sources with DevArt Slider and
+DevArt Widgets. Business detail pages integrate with DevArt Gallery (indexed
+galleries). The site module id is `mod_devartbusiness`.
 
 ### Image Upload Optimization
 
@@ -176,6 +185,8 @@ This package installs:
 
 - `com_devartbusiness`
 - `mod_devartbusiness`
+- `plg_content_devartbusinesscomments` (thin Comments host; soft-depends on
+  `com_devartcomments` 1.0.82+)
 
 ---
 
@@ -283,29 +294,42 @@ Optional integration:
 
 ## Current Version
 
-1.1.9
+1.2.0
 
 ---
 
-## What's New in 1.1.9
+## What's New in 1.2.0
 
-Businesses CSV can assign categories during bulk import/export.
+### DevArt Comments on business pages
 
-### Added
+Business detail pages can now show DevArt Comments. Install
+`com_devartcomments`, turn on Comments Settings → Enable Business, and the
+included plugin `plg_content_devartbusinesscomments` hosts the panel. Permanent
+delete notifies Comments cleanup when Comments is present. Comments is optional
+and not bundled in this package.
 
-- Optional `categories` column on businesses CSV import and export
-  (pipe-separated category id, alias, or unique title; first = primary)
+### Maps and media
 
-### Changed
+- Marker clustering on listing and module maps (plain markers as fallback)
+- Gallery lightbox fix on business detail
+- Module card thumbnail support with full-image fallback
 
-- Category linking matches existing categories only; unknown or ambiguous
-  tokens are skipped
-- Omit the column to leave category links unchanged; leave it empty to clear them
+### Listings and scale
+
+- Faster category counts and leaner listing/module queries
+- Correct items-per-page / safe limit clamping
+- Menu category/tag sources stay in scope with frontend filters
+
+### Tools, security, and cache
+
+- Tools export session token; safer external URLs
+- CSV social URL export round-trip
+- Better cache cleanup after writes (including page cache) and short-lived
+  filter caching; Cloudflare notes for filtered listings
 
 ### Notes
 
-- Import or create categories before using the `categories` column
-- Install or update with the package ZIP once; later updates use Joomla native package updates
+- Safe update from 1.1.9 with the full package ZIP
 - Requires Joomla 6.0+ and PHP 8.3.0+
 - First public release: 1.0.2 (June 2026)
 

@@ -3,6 +3,40 @@
 All notable changes to this repository are documented here. Verified Joomla
 runtime QA is recorded in `PROJECT_STATUS.md` after VPS confirmation.
 
+## 1.2.0
+
+### DevArt Comments on business pages
+
+- Included plugin `plg_content_devartbusinesscomments` hosts DevArt Comments on
+  business detail when `com_devartcomments` is installed and Comments Settings →
+  Enable Business is On (optional; not bundled).
+- Permanent business delete notifies Comments cleanup when Comments is present
+  (soft-fail if absent).
+
+### Maps and media
+
+- Map marker clustering on listing and module maps (local Leaflet.markercluster,
+  plain-marker fallback; detail maps unchanged; marker cap 500).
+- Gallery lightbox popups fixed on business detail.
+- Module card images can use generated thumbnails with full-image fallback.
+
+### Listings, filters, and scale
+
+- Faster category business counts on the categories view.
+- Faster, leaner listing and module queries for large directories.
+- Listing items-per-page applies correctly; request limit is clamped.
+- Menu category/tag sources stay in scope with frontend filters.
+- Database index for primary business location lookups.
+
+### Tools, security, and cache
+
+- Tools export requires a session token.
+- Safer external website/social URL handling.
+- CSV export includes social URL columns for import round-trip.
+- Improved cache cleanup after edits, imports, and bulk actions (including page
+  cache), plus short-lived filter/category option caching.
+- Cloudflare / full-page cache operator notes for filtered listings.
+
 ## 1.1.9
 
 - Businesses CSV import and export support an optional `categories` column

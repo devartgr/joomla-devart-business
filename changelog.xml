@@ -3,6 +3,45 @@
     <changelog>
         <element>pkg_devartbusiness</element>
         <type>package</type>
+        <version>1.2.0</version>
+
+        <addition>
+            <item>DevArt Comments on business detail pages via the included plugin plg_content_devartbusinesscomments (optional; install com_devartcomments and turn on Comments Settings → Enable Business)</item>
+            <item>Permanent business delete notifies Comments cleanup when Comments is present (soft-fail if absent)</item>
+            <item>Map marker clustering on listing and module maps (local Leaflet.markercluster; plain markers as fallback; detail maps unchanged)</item>
+            <item>Faster category business counts on the categories view for large directories</item>
+            <item>Module card images can use generated thumbnail files with automatic full-image fallback</item>
+            <item>Businesses CSV export includes social URL columns for clean import round-trip</item>
+            <item>Database index for primary business location lookups</item>
+        </addition>
+
+        <fix>
+            <item>Gallery lightbox popups on business detail pages</item>
+            <item>Listing items-per-page setting applies correctly; request limit is clamped safely</item>
+            <item>Menu category and tag sources stay in scope when visitors use frontend filters</item>
+            <item>Administrator Tools export requires a session token</item>
+            <item>Safer handling of external website and social URLs</item>
+        </fix>
+
+        <change>
+            <item>Faster, leaner listings and module queries for large directories</item>
+            <item>Improved cache cleanup after edits, imports, and bulk actions (including page cache)</item>
+            <item>Short-lived caching for filter and category option queries</item>
+            <item>Cloudflare / full-page cache operator notes for filtered listings</item>
+        </change>
+
+        <note>
+            <item>Comments is a soft dependency and is not bundled in this package</item>
+            <item>Safe update from 1.1.9 using the full pkg_devartbusiness package</item>
+            <item>Install or update with the package ZIP once; later updates use Joomla native package updates</item>
+            <item>Requires Joomla 6.0+ and PHP 8.3.0+</item>
+            <item>Map marker cap remains 500 on listing and module maps</item>
+        </note>
+    </changelog>
+
+    <changelog>
+        <element>pkg_devartbusiness</element>
+        <type>package</type>
         <version>1.1.9</version>
 
         <addition>
