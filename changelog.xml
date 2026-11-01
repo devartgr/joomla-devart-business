@@ -3,57 +3,6 @@
     <changelog>
         <element>pkg_devartbusiness</element>
         <type>package</type>
-        <version>1.2.1</version>
-
-        <addition>
-            <item>DevArt Comments on business detail pages via plg_content_devartbusinesscomments (optional; requires com_devartcomments with Enable Business On)</item>
-            <item>Map marker clustering on listing and module maps</item>
-            <item>Faster listings and category counts for large directories</item>
-        </addition>
-
-        <fix>
-            <item>Gallery lightbox popups on business detail</item>
-            <item>Listing items_per_page and menu category/tag filter intersection</item>
-            <item>Tools export token and safer external URL handling</item>
-        </fix>
-
-        <change>
-            <item>Cache cleanup and filter caching improvements</item>
-            <item>CSV social URL export round-trip with import</item>
-        </change>
-
-        <note>
-            <item>Comments is a soft dependency and is not bundled in this package</item>
-            <item>Install or update with the package ZIP once; later updates use Joomla native package updates</item>
-            <item>Requires Joomla 6.0+ and PHP 8.3.0+</item>
-        </note>
-    </changelog>
-
-    <changelog>
-        <element>pkg_devartbusiness</element>
-        <type>package</type>
-        <version>1.2.0</version>
-
-        <addition>
-            <item>Thin content plugin plg_content_devartbusinesscomments hosts DevArt Comments on business detail pages (context com_devartbusiness.item)</item>
-        </addition>
-
-        <change>
-            <item>Comments panel appears only when com_devartcomments is enabled and Comments Settings enable_business is On</item>
-            <item>Permanent business delete notifies Comments purgeForItem via onContentAfterDelete (soft-fail if Comments is absent)</item>
-        </change>
-
-        <note>
-            <item>Install or update with the package ZIP once; later updates use Joomla native package updates</item>
-            <item>Requires Joomla 6.0+ and PHP 8.3.0+</item>
-            <item>Comments panel requires com_devartcomments 1.0.82+ with enable_business On (Comments owns that flag; keep Off until pair-QA)</item>
-            <item>Comments is a soft dependency and is not bundled inside this package</item>
-        </note>
-    </changelog>
-
-    <changelog>
-        <element>pkg_devartbusiness</element>
-        <type>package</type>
         <version>1.1.9</version>
 
         <addition>
