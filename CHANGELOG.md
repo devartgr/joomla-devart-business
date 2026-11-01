@@ -3,6 +3,26 @@
 All notable changes to this repository are documented here. Verified Joomla
 runtime QA is recorded in `PROJECT_STATUS.md` after VPS confirmation.
 
+## 1.2.1
+
+- **DevArt Comments on business detail pages** — included plugin
+  `plg_content_devartbusinesscomments` hosts the Comments panel when
+  `com_devartcomments` is installed and Comments Settings → Enable Business is
+  On (Comments is optional and not bundled).
+- Map marker clustering on listing and module maps.
+- Faster listings and category counts for large directories; safer cache cleanup.
+- Gallery lightbox popup fix on business detail.
+- Tools/export hardening and CSV social URL round-trip.
+
+## 1.2.0
+
+- Thin content plugin `plg_content_devartbusinesscomments` hosts DevArt Comments
+  on business detail pages (`com_devartbusiness.item`) when Comments
+  `enable_business` is On (requires `com_devartcomments` 1.0.82+).
+- Permanent business delete dispatches Comments lifecycle cleanup via
+  `onContentAfterDelete` (soft-fail if Comments is absent).
+- No comment SQL, OTP, tokens, or UI logic in Business; Comments owns the panel.
+
 ## 1.1.9
 
 - Businesses CSV import and export support an optional `categories` column
