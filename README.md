@@ -6,7 +6,7 @@ and high-traffic websites.
 
 ![Joomla](https://img.shields.io/badge/Joomla-6.x-blue)
 ![PHP](https://img.shields.io/badge/PHP-8.3%2B-green)
-![Release](https://img.shields.io/badge/Version-1.2.0-orange)
+![Release](https://img.shields.io/badge/Version-1.2.1-orange)
 ![License](https://img.shields.io/badge/License-GPL--2.0%2B-red)
 
 ---
@@ -294,9 +294,18 @@ Optional integration:
 
 ## Current Version
 
-1.2.0
+1.2.1
 
 ---
+
+## What's New in 1.2.1
+
+- Fix HTTP 500 `ArgumentCountError` on module sources One category / Tags /
+  Map with category (SQL bind mismatch in embedded subqueries)
+- Module map loading label uses a module language string (no raw key flash on
+  homepage maps)
+- Full support for all 15 claimed language packs (fill remaining English stubs,
+  with audit/allowlist for brands and international cognates)
 
 ## What's New in 1.2.0
 

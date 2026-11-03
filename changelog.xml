@@ -3,6 +3,23 @@
     <changelog>
         <element>pkg_devartbusiness</element>
         <type>package</type>
+        <version>1.2.1</version>
+
+        <fix>
+            <item>Fix module category/tag SQL bind mismatch that caused HTTP 500 ArgumentCountError on single-category modules</item>
+            <item>Module map loading label uses module language string so homepage maps no longer flash a raw language key</item>
+            <item>Language packs completed for all 15 claimed locales: fill remaining English stubs (especially el-GR) while keeping intentional brand cognates</item>
+        </fix>
+
+        <note>
+            <item>Safe update from 1.2.0 using the full pkg_devartbusiness package</item>
+            <item>Requires Joomla 6.0+ and PHP 8.3.0+</item>
+        </note>
+    </changelog>
+
+    <changelog>
+        <element>pkg_devartbusiness</element>
+        <type>package</type>
         <version>1.2.0</version>
 
         <addition>
