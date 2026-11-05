@@ -6,12 +6,12 @@
         <element>pkg_devartbusiness</element>
         <type>package</type>
         <client>site</client>
-        <version>1.2.1</version>
+        <version>1.2.2</version>
         <infourl title="DevArt Business">https://github.com/devartgr/joomla-devart-business</infourl>
         <downloads>
-            <downloadurl type="full" format="zip">https://github.com/devartgr/joomla-devart-business/releases/download/v1.2.1/pkg_devartbusiness_v1.2.1.zip</downloadurl>
+            <downloadurl type="full" format="zip">https://github.com/devartgr/joomla-devart-business/releases/download/v1.2.2/pkg_devartbusiness_v1.2.2.zip</downloadurl>
         </downloads>
-        <sha256>bad5ffe9a7cc8f8e29b12c7549a7f60e04486be56ca4604d405fa7c7ddcc9026</sha256>
+        <sha256>92df5e063447c3d22165cfb31b3ac52e18122db05703f59a416a40c8e910905f</sha256>
         <tags>
             <tag>stable</tag>
         </tags>

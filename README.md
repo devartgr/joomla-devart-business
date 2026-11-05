@@ -6,7 +6,7 @@ and high-traffic websites.
 
 ![Joomla](https://img.shields.io/badge/Joomla-6.x-blue)
 ![PHP](https://img.shields.io/badge/PHP-8.3%2B-green)
-![Release](https://img.shields.io/badge/Version-1.2.1-orange)
+![Release](https://img.shields.io/badge/Version-1.2.2-orange)
 ![License](https://img.shields.io/badge/License-GPL--2.0%2B-red)
 
 ---
@@ -294,9 +294,14 @@ Optional integration:
 
 ## Current Version
 
-1.2.1
+1.2.2
 
 ---
+
+## What's New in 1.2.2
+
+- Fix catalogue category links and filter form so a one-category businesses
+  menu is not used as the SEF Itemid for all categories (GitHub issue #3)
 
 ## What's New in 1.2.1
 

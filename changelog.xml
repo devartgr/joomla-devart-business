@@ -3,6 +3,21 @@
     <changelog>
         <element>pkg_devartbusiness</element>
         <type>package</type>
+        <version>1.2.2</version>
+
+        <fix>
+            <item>Fix catalogue category links and filter form using a category-scoped businesses menu as SEF Itemid (wrong path prefix; GitHub issue #3)</item>
+        </fix>
+
+        <note>
+            <item>Safe update from 1.2.1 using the full pkg_devartbusiness package</item>
+            <item>Requires Joomla 6.0+ and PHP 8.3.0+</item>
+        </note>
+    </changelog>
+
+    <changelog>
+        <element>pkg_devartbusiness</element>
+        <type>package</type>
         <version>1.2.1</version>
 
         <fix>
