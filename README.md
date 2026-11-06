@@ -6,7 +6,7 @@ and high-traffic websites.
 
 ![Joomla](https://img.shields.io/badge/Joomla-6.x-blue)
 ![PHP](https://img.shields.io/badge/PHP-8.3%2B-green)
-![Release](https://img.shields.io/badge/Version-1.2.3-orange)
+![Release](https://img.shields.io/badge/Version-1.2.4-orange)
 ![License](https://img.shields.io/badge/License-GPL--2.0%2B-red)
 
 ---
@@ -294,9 +294,14 @@ Optional integration:
 
 ## Current Version
 
-1.2.3
+1.2.4
 
 ---
+
+## What's New in 1.2.4
+
+- Business detail links no longer bind to a One category menu SEF base
+  after search/listing (issue #3 follow-up)
 
 ## What's New in 1.2.3
 

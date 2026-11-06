@@ -3,6 +3,21 @@
     <changelog>
         <element>pkg_devartbusiness</element>
         <type>package</type>
+        <version>1.2.4</version>
+
+        <fix>
+            <item>Business detail links after search/listing no longer use a taxonomy-scoped businesses menu SEF base (issue #3 follow-up); module links use RouteHelper</item>
+        </fix>
+
+        <note>
+            <item>Safe update from 1.2.3 using the full pkg_devartbusiness package</item>
+            <item>Requires Joomla 6.0+ and PHP 8.3.0+</item>
+        </note>
+    </changelog>
+
+    <changelog>
+        <element>pkg_devartbusiness</element>
+        <type>package</type>
         <version>1.2.3</version>
 
         <fix>
